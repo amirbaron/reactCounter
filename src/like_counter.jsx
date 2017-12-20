@@ -28,7 +28,7 @@ export class LikeCounter extends Component {
                 let bitCoinPrice = res.USDT_BTC.last;
                 this.setState({priceUsd: bitCoinPrice})
             })
-            window.setTimeout(this.getBitCoinPrice, 5000);
+            // window.setTimeout(this.getBitCoinPrice, 5000);
         }
     }
 
@@ -47,6 +47,7 @@ export class LikeCounter extends Component {
         // If you need to update the state in response to prop changes (for example, to reset it),
         // you may compare this.props and nextProps and perform state transitions using this.setState() in this method
         console.log('componentWillReceiveProps');
+        this.setState({counter:nextProps.counter});
     }
 
     shouldComponentUpdate(nextProps, nextState) {

@@ -7,11 +7,15 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {span: false};
+        this.state = {span: false, counter:0};
     }
 
     toggleSpan = () => {
         this.setState({span: !this.state.span});
+    }
+
+    incInitialCounter = () => {
+        this.setState({counter:this.state.counter + 1});
     }
 
     renderApp = () => {
@@ -23,7 +27,8 @@ class App extends Component {
                 </header>
                 <div className="container">
                     <button onClick={this.toggleSpan}>Do something</button>
-                    <LikeCounter counter={0}/>
+                    <button onClick={this.incInitialCounter}>Inc initial counter</button>
+                    <LikeCounter counter={this.state.counter}/>
                 </div>
             </div>);
     }
