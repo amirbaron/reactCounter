@@ -11,7 +11,6 @@ export class LikeCounter extends Component {
         console.log("constructor");
         this.state = {counter: this.props.counter, priceUsd: 0};
         this.mounted = false
-
     }
 
     componentWillMount() {
